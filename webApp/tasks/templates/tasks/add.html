@@ -1,0 +1,14 @@
+
+{% extends "tasks/layout.html" %}
+
+{% block body %}
+    <h1>Add the Task</h1>
+    <form action="{%  url 'add' %}" method="POST">
+        {% csrf_token %}
+        <!-- <label for="">Task to perform</label><br><br> -->
+        <!-- <input type="textarea" name="add" placeholder="write your task.."> -->
+       {{form}}
+        <input type="submit" value="submit" >
+    </form>
+    <a href="{% url 'hometask' %}">View tasks</a>
+{% endblock %}
